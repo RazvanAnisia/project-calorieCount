@@ -1,6 +1,7 @@
 .CalorieApp{
   background:rgb(20, 204, 149);
-  height:1000pxx;
+  
+  
 }
 .CalorieApp h1{
   margin:0;
@@ -93,7 +94,9 @@ p{
   background-color:tomato;
   color:white;
   text-align: center;
-  height:2rem;
+  height:3rem;
+  font-size:1rem;
+  padding:0.5rem;
 }
 
 /* spinner */
@@ -121,5 +124,14 @@ p{
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media(max-width:1000px){
+  .CalorieApp{
+    padding-left:4.3rem;
+  }
+  .error{
+   padding-left:1rem;
   }
 }

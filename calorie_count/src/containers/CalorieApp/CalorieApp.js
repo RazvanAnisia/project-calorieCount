@@ -27,7 +27,7 @@ class CalorieApp extends Component {
     
     this.setState({spinner:true})
     //fetch the information from the API using the input
-    axios.get(`https://world.openfoodfacts.org/api/v0/product/${this.state.searchedProduct}.json`)
+    axios.get(`https://world.openfoodfacts.org/api/v0/product/${e.target.children[0].value}.json`)
     .then(res=>{
       //check if the product was found or not
       console.log(res)
@@ -38,15 +38,13 @@ class CalorieApp extends Component {
       }
       else{
         //show error
-        this.setState({error:'No Product Found'})
+        this.setState({error:'We are sorry but we do not have this product in our database.'})
         console.log('no product found')
       }
-     
-    })
-    .then(
       //run the function to get the values from the state
       this.getProductValuesHandler()
-    )
+    })
+    
     .catch(err =>{
       this.setState({error:'There was a problem'})
       console.log(err)
@@ -111,7 +109,7 @@ class CalorieApp extends Component {
       </div>);
     }
     if(this.state.error){
-      error = <h2 className={classes.error}>{this.state.error}</h2>
+      error = <h2 className={classes.error}>{this.state.error} {'But you can help us, and add it yourself using this link '}<a href='https://world.openfoodfacts.org/'>here</a> </h2>
     }
     
     return(
@@ -127,7 +125,7 @@ class CalorieApp extends Component {
             <img className={classes.HowTo} src={nutrientsImg}  alt='nutrients'/>
           </div>
           <div>
-            <p>3.And find out all the information you need</p>
+            <p>3.Find out the information you need</p>
             <img className={classes.HowTo} src={caloriesImg}alt='calories'/>
           </div>
        </div>

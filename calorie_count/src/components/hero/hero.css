@@ -9,18 +9,49 @@
 .HeroTitle{
  font-family: 'Lobster', cursive;
  margin:0;
- color:rgb(13, 184, 127);
+ color:white;
  margin:0 3% 0 15%;
  padding-top:3rem;
  font-size:3.5rem;
  text-shadow:2px 2px 2px black;
 }
 .Hero p{
-  font-size:1.5rem;
-  color:rgb(243, 213, 196);
+  font-size:2rem;
+  /* color:rgb(245, 122, 51); */
+  color:rgb(33, 191, 223);
   font-family: 'Roboto', cursive;
   /* font-weight: 800; */
   line-height: 1.5;
   margin: 5rem 10%;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 2px 2px 1px black;
+}
+.highlight{
+  color:white;
+  font-family: 'Lobster', cursive;
+
+}
+@media(max-width:1000px){
+  .HeroTitle{
+    margin:0 15% 0 15%;
+    margin-left:7rem;
+    padding-top:3rem;
+    font-size:2rem;
+    }
+    .Hero p{
+      font-size:1.4rem;
+      margin: 10rem 7rem;;
+      
+    }
+}
+@media(max-width:650px){
+  .HeroTitle{
+    margin-left:7rem;
+    padding-top:3rem;
+    font-size:2rem;
+    }
+    .Hero p{
+      font-size:1.1rem;
+      margin: 12rem 2rem 0 5.8rem; ;;
+      
+    }
 }
