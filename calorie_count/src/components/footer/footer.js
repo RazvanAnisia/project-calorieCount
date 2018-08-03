@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './footer.css';
 import OpenFoodLogo from '../../assets/openFood.png';
+import Logo from '../../assets/logo_web_white.png';
 
 const footer = ()=>{
   return(
@@ -12,6 +13,7 @@ const footer = ()=>{
         <li><a href='https://world.openfoodfacts.org/'>Open Food Facts</a></li>
         <li><a href="https://github.com/RazvanAnisia/CalorieCount">Github Repo</a></li>
     </ul>
+    <img  className={classes.logo} src={Logo}/>
     
    </footer>
 

@@ -1,5 +1,5 @@
 .CalorieApp{
-  background:rgb(20, 204, 149);
+  background:linear-gradient(rgb(97, 201, 144),rgb(207, 149, 40));
   
   
 }
@@ -129,9 +129,19 @@ p{
 
 @media(max-width:1000px){
   .CalorieApp{
-    padding-left:4.3rem;
+    padding-left:5.5rem;
   }
   .error{
    padding-left:1rem;
+   height:5rem;
+  }
+}
+@media(max-width:600px){
+  .CalorieApp{
+    padding-left:4.3rem;
+  }
+  .error{
+   /* padding-left:1rem; */
+   height:5rem;
   }
 }

@@ -6,6 +6,11 @@
   
   
 }
+.Logo{
+  width:50px;
+  max-width:100%;
+  height:auto;
+}
 .footer p{
   /* padding-top:1rem; */
   margin-left:2rem;
@@ -48,8 +53,8 @@
 }
 @media(max-width:500px){
   .footer{
-    padding-left:3.5rem;
-    padding-left:2rem;
+    padding-left:1rem;
+    padding-right:2rem;
   }
   .footer p{
     font-size:.8rem;
@@ -63,4 +68,7 @@
   .footer a{
     font-size:0.8rem;
   }
+}
+.logo{
+  margin-left:10rem;
 }
