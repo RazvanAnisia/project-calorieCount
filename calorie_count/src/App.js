@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
-import logo from './assets/logo_web_white.png';
-import './App.css';
+import  classes from './App.css';
+import Header from './components/header/header';
+import Hero from './components/hero/hero';
+import CalorieApp from './containers/CalorieApp/CalorieApp';
+import Footer from './components/footer/footer';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <nav>
-            <ul>
-              <li><a href='/'>The app</a></li>
-              <li><a href='/'>About</a></li>
-              <li><a href='/'>Contact</a></li>
-            </ul>
-          </nav>
-
-        </header>
-        <div className ='hero'>
-
-        </div>
+      <div className={classes.App}>
+        <Header/>
+        <Hero/>
+        <CalorieApp/>
+        <Footer/>
       </div>
     );
   }

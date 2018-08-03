@@ -1,0 +1,17 @@
+.BarcodeForm{
+  text-align: center;
+ 
+}
+.BarcodeInput{
+   width:40%;
+   height:1.5rem;
+   margin:1rem auto;
+}
+.submitButton{
+  border:none;
+  padding:1rem;
+  color:white;;
+  background:tomato;
+  cursor:pointer;
+  font-size:1.2rem;
+}

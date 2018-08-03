@@ -1,0 +1,31 @@
+.footer{
+  margin-top:-1rem;
+  background: #222222;
+  color:white;
+  padding-top:2rem;
+  
+}
+.footer p{
+  /* padding-top:1rem; */
+  text-align:center;
+}
+.footer ul{
+  text-align: center;
+}
+.footer li{
+  list-style: none;
+  
+}
+.footer a{
+  text-decoration: none;
+  color:rgb(22, 212, 95);
+}
+.footer li a:hover{
+  color:tomato;
+}
+.footer img{
+  max-width: 100%;
+  width:300px;
+  display:block;
+  margin:0 auto;
+}
