@@ -1,7 +1,6 @@
 .CalorieApp{
-  background:linear-gradient(rgb(97, 201, 144),rgb(207, 149, 40));
-  
-  
+  background:linear-gradient(rgb(97, 201, 144),rgb(40, 168, 207));
+   
 }
 .CalorieApp h1{
   margin:0;
@@ -85,8 +84,15 @@ p{
 .description{
   display:flex;
   flex-wrap:wrap;
-  margin:0 rem;
   justify-content: space-around;
+}
+.description div{
+  margin:0 1rem;
+}
+.description div img{
+ max-width:100%;
+ height:auto;
+ width:170px;
 }
 .error{
   background-color:tomato;
@@ -142,4 +148,9 @@ p{
    /* padding-left:1rem; */
    height:5rem;
   }
+  .description div img{
+    width:130px;
+    max-width:100%;
+    height:auto;
+   }
 }

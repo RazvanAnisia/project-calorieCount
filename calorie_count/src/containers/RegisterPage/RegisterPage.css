@@ -1,9 +1,9 @@
-.LoginPage{
+.RegisterPage{
   height:500px;
-  background:linear-gradient(rgb(97, 201, 144),rgb(40, 168, 207));
+  background:linear-gradient(rgb(97, 201, 144),rgb(207, 149, 40));
   padding-top:1rem;
 }
-.LoginPage h1{
+.RegisterPage h1{
   text-align: center;
   font-family: 'Lobster', cursive;
   margin-top:0;
@@ -11,18 +11,18 @@
 }
 .wrap{
   width:40%;
-  height:350px;
-  background:linear-gradient(rgb(97, 201, 144),rgb(124, 181, 214));
+  height:400px;
+  background:linear-gradient(rgb(97, 201, 144),rgb(207, 149, 40));
   box-shadow: 1px 2px 2px  black;
   margin:0 auto;
   border-radius:5px;
   margin-top:1rem;
 }
-.LoginPage label{
+.RegisterPage label{
   display:block;
   margin:10px 0 0 1rem;
 }
-.LoginPage input{
+.RegisterPage input{
   display:block;
   margin:10px auto;;
   width:80%;
@@ -30,26 +30,26 @@
   border:none;
   height:2rem;
 }
-.LoginPage h5{
+.RegisterPage h5{
   text-align: center;
 }
-.LoginPage a:active,
-.LoginPage a:hover{
+.RegisterPage a:active,
+.RegisterPage a:hover{
   color:white;
 }
 
-.LoginPage input[type="submit"]{
+.RegisterPage input[type="submit"]{
   background:tomato;
   width:40%;
   border:none;
   padding:10px;
-  margin:2rem auto;
+  margin:10px auto;
   cursor: pointer;
   color:white;
   box-shadow:1px 1px 1px black;
   font-size:1rem;
 }
-.LoginPage input[type="submit"]:hover{
+.RegisterPage input[type="submit"]:hover{
 transform:scale(1.04)
 }
 @media(max-width:700px){

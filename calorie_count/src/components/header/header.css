@@ -1,6 +1,7 @@
 .Header {
   background-color: #222;
-  height: 80px;
+  background:linear-gradient(rgb(11, 69, 87),rgb(13, 93, 117));
+  height: 60px;
   padding:10px;
   color: white;
   display:flex;
@@ -15,8 +16,9 @@ nav{
   justify-content: space-around;
 }
 .navElements li{
+  font-family: 'Lato', cursive;
   list-style: none;
-  margin:2.5rem 4rem;
+  margin:1.2rem 4rem;
 }
 .navElements a{
   text-decoration: none;
@@ -38,13 +40,14 @@ nav{
     flex-direction: column;
     position: absolute;
     position:fixed;
-    top:5.25rem;
+    top:4rem;
     left:0;
     background:red;
     width:3rem;
     height:100%;
     /* background-color: rgb(65, 60, 60); */
-    background:#34DD9F;
+    /* background:#34DD9F; */
+    background:linear-gradient(to left,rgb(34, 170, 163),rgb(40, 168, 207));
     box-shadow: 2px 2px 2px  black;
   }
   .navElements li{
@@ -67,6 +70,7 @@ nav{
     border-left:5px solid rgba(255, 255, 255, 0.61) ;
     border-bottom: none;
   }
+  
 
 }
 @media(max-width: 500px){
@@ -74,6 +78,6 @@ nav{
     width:1.5rem;
  }
  .navElements a{
-   font-size:.7rem;
+   font-size:.85rem;
  }
 }

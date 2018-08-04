@@ -1,20 +1,21 @@
 import React,{Component} from 'react';
-import classes from './LoginPage.css';
-import { NavLink } from '../../../node_modules/react-router-dom';
+import classes from './RegisterPage.css';
 import {Animated} from "react-animated-css";
 
-class LoginPage extends Component{
+class RegisterPage extends Component{
   state={
     
   }
   render(){
     return(
       <Animated animationIn="bounceInRight" animationOut="fadeOut" isVisible={true}>
-        <div className={classes.LoginPage}>
+        <div className={classes.RegisterPage}>
           <div className={classes.wrap}>
-            <h1>Login</h1>
-            <h5>New User?Please Register  <NavLink to="/register">here</NavLink> then</h5>
+            <h1>Register</h1>
+            <h5>Create an account</h5>
             <form>
+              <label htmlFor='name'>Name</label>
+              <input id='name' type='text'/>
               <label htmlFor='email'>Email</label>
               <input id='email' type='text'/> 
               <label htmlFor='password'>Password</label>
@@ -28,4 +29,4 @@ class LoginPage extends Component{
   }
 }
 
-export default LoginPage;
+export default RegisterPage;

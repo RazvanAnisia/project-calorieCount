@@ -20,6 +20,10 @@
   font-weight: 700;
   text-decoration: none;
 }
+.Links a:hover{
+  color:tomato;
+  
+}
 @media(max-width:450px){
   .ContactPage{
     font-size:0.8rem;

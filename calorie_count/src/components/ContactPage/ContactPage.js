@@ -9,11 +9,11 @@ const contactPage = ()=>{
           <div className={classes.wrap}>
             <h1>Contact</h1>
             <p>This app was created by Razvan Anisia, using React.js, Node.js and PostgreSQL and the Open Food Facts API.</p>
-            <p>If you wish you contact the creator ,you can find him using these links</p>
+            <p>If you wish to contact the creator ,you can find him using these links</p>
             <ul className={classes.Links}>
-                <li><a href='https://github.com/RazvanAnisia'  >Github</a></li>
-                <li><a href="https://www.linkedin.com/in/razvan-anisia-917608162/">LinkedIn</a></li>
-                <li><a href='https://www.facebook.com/profile.php?id=100003691274985&ref=bookmarks'>Facebook</a></li>
+                <li><a href='https://github.com/RazvanAnisia' target='_blank' rel='noreferrer noopener'>Github</a></li>
+                <li><a href="https://www.linkedin.com/in/razvan-anisia-917608162/" target='_blank' rel='noreferrer noopener'>LinkedIn</a></li>
+                <li><a href='https://www.facebook.com/profile.php?id=100003691274985&ref=bookmarks' target='_blank' rel='noreferrer noopener'>Facebook</a></li>
                 
             </ul>
           </div> 
