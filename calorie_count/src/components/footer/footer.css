@@ -1,6 +1,7 @@
 .footer{
   margin-top:-1rem;
-  background: #222222;
+  /* background: #222222; */
+  background:linear-gradient(rgb(6, 46, 58),rgb(10, 56, 70));
   color:white;
   padding-top:2rem;
   

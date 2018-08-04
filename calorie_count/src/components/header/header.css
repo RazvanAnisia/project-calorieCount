@@ -1,6 +1,6 @@
 .Header {
-  background-color: #222;
-  background:linear-gradient(rgb(11, 69, 87),rgb(13, 93, 117));
+  /* background-color: #222; */
+  background:linear-gradient(rgb(11, 69, 87),rgb(10, 56, 70));
   height: 60px;
   padding:10px;
   color: white;

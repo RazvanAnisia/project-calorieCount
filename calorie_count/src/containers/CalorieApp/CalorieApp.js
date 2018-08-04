@@ -6,6 +6,7 @@ import userLogo from '../../assets/user_red.png';
 import nutrientsImg from '../../assets/barcode2.png';
 import caloriesImg from '../../assets/calories_opt.png';
 import {Animated} from "react-animated-css";
+import FoodIntake from './FoodIntake/FoodIntake';
 
 
 //  cola 54491472
@@ -85,9 +86,10 @@ class CalorieApp extends Component {
     let error = null;
     let displayNut = [];
     let allInfo = null;
+    let intake;
     //if there are nutriments
     if(this.state.values.nutriments){
-      const nutrients = {...this.state.values.nutriments}
+      var nutrients = {...this.state.values.nutriments}
       displayNut = [
         <li key={'energy'}>Energy:{nutrients.energy_value} {nutrients.energy_unit}</li>,
         <li key={'carbs'}>Carbohydrates: {nutrients.carbohydrates_100g} g </li>,
@@ -99,22 +101,31 @@ class CalorieApp extends Component {
     if(this.state.spinner && this.state.error === null  ){
       allInfo = <div className={classes.lds}></div>;
     }else{
-      allInfo = (<Animated animationIn="bounceInUp" animationOut="fadeOut" isVisible={true}><div className={classes.Info}>
-      <p className = {classes.name}>  {info.productName ? info.productName : null}</p>
-      <p>{info.quantity}</p>
-      <img className={classes.productImg} src={info.imageUrl} alt=''/>
-      <img className={classes.productImgNutrition} src={info.imageNutrition} alt=''/>
-      <p> Per :{info.NutritionPer} </p>
-      <ul>
-        {displayNut}
-      </ul>
-      </div>
-      </Animated>);
+      allInfo = (
+      <Animated animationIn="bounceInUp" animationOut="fadeOut" isVisible={true}><div className={classes.Info}>
+        <p className = {classes.name}>  {info.productName ? info.productName : null}</p>
+        <p>{info.quantity}</p>
+        <img className={classes.productImg} src={info.imageUrl} alt=''/>
+        <img className={classes.productImgNutrition} src={info.imageNutrition} alt=''/>
+        <p> Per :{info.NutritionPer} </p>
+        <ul>
+          {displayNut}
+        </ul>
+        </div>
+     </Animated>);
     }
+
     if(this.state.error){
       error = <h2 className={classes.error}>{this.state.error} {'But you can help us, and add it yourself using this link '}<a href='https://world.openfoodfacts.org/'>here</a> </h2>
     }else{
       error = null;
+    }
+
+    if(this.state.values){
+      let info = this.state.values;
+      intake = <FoodIntake serving={info.NutritionPer} product={info.productName} nutrients={this.state.values.nutriments} />
+    }else{
+      intake = <FoodIntake/>
     }
     
     return(
@@ -139,9 +150,9 @@ class CalorieApp extends Component {
         <ProductForm submit={this.getInputValue}/>
         {error}
         {this.state.displayed ? allInfo : null}
-        <p>Would you like to add this to your daily intake?</p>
-       
-      </div>
+        
+         {intake}
+        </div>
       </Animated>
     )
   }
