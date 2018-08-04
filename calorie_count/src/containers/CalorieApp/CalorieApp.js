@@ -5,6 +5,8 @@ import ProductForm from '../../components/productForm/productForm';
 import userLogo from '../../assets/user_red.png';
 import nutrientsImg from '../../assets/barcode2.png';
 import caloriesImg from '../../assets/calories_opt.png';
+import {Animated} from "react-animated-css";
+
 
 //  cola 54491472
 class CalorieApp extends Component {
@@ -97,7 +99,7 @@ class CalorieApp extends Component {
     if(this.state.spinner && this.state.error === null  ){
       allInfo = <div className={classes.lds}></div>;
     }else{
-      allInfo = (<div className={classes.Info}>
+      allInfo = (<Animated animationIn="bounceInUp" animationOut="fadeOut" isVisible={true}><div className={classes.Info}>
       <p className = {classes.name}>  {info.productName ? info.productName : null}</p>
       <p>{info.quantity}</p>
       <img className={classes.productImg} src={info.imageUrl} alt=''/>
@@ -106,13 +108,17 @@ class CalorieApp extends Component {
       <ul>
         {displayNut}
       </ul>
-      </div>);
+      </div>
+      </Animated>);
     }
     if(this.state.error){
       error = <h2 className={classes.error}>{this.state.error} {'But you can help us, and add it yourself using this link '}<a href='https://world.openfoodfacts.org/'>here</a> </h2>
+    }else{
+      error = null;
     }
     
     return(
+      <Animated animationIn="bounceInRight" animationOut="fadeOut" isVisible={true}>
       <div className={classes.CalorieApp}>
       <h1>How does it work?</h1>
         <div className={classes.description}>
@@ -131,8 +137,12 @@ class CalorieApp extends Component {
        </div>
         <p>It's as EASY as that.</p>
         <ProductForm submit={this.getInputValue}/>
-        {error ? error : allInfo}
+        {error}
+        {this.state.displayed ? allInfo : null}
+        <p>Would you like to add this to your daily intake?</p>
+       
       </div>
+      </Animated>
     )
   }
 }

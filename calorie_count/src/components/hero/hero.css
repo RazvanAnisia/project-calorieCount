@@ -51,7 +51,19 @@
     }
     .Hero p{
       font-size:1.1rem;
-      margin: 12rem 2rem 0 5.8rem; ;;
+      margin: 10rem 0.5rem 0 5.8rem; ;;
+      
+    }
+}
+@media(max-width:450px){
+  .HeroTitle{
+    margin-left:5.5rem;
+    padding-top:3rem;
+    font-size:2rem;
+    }
+    .Hero p{
+      font-size:1.1rem;
+      margin: 3rem 0.5rem 0 5.8rem; ;;
       
     }
 }

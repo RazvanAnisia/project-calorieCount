@@ -6,11 +6,11 @@
   
   
 }
-.Logo{
+/* .Logo{
   width:50px;
   max-width:100%;
   height:auto;
-}
+} */
 .footer p{
   /* padding-top:1rem; */
   margin-left:2rem;
@@ -32,7 +32,7 @@
 }
 .footer img{
   max-width: 100%;
-  width:300px;
+  width:200px;
   display:block;
   margin:0 auto;
 }
@@ -61,7 +61,7 @@
   }
   .footer img{
     max-width: 100%;
-    width:200px;
+    width:120px;
     display:block;
     margin:0 auto;
   }
@@ -69,6 +69,6 @@
     font-size:0.8rem;
   }
 }
-.logo{
-  margin-left:10rem;
+.footer .logo{
+  width:100px;
 }

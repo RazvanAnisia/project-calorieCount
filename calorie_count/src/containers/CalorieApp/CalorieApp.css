@@ -62,12 +62,10 @@ p{
 }
 .Info ul{
   display:block;
-  margin:0 auto;
+  margin:0 25%;
 }
 .Info li{
-  
   list-style: none;
-  
 }
 .name{
   font-size:1.5rem;
