@@ -20,14 +20,13 @@ class CalorieApp extends Component {
   }
 
   getInputValue = (e)=>{
-     this.setState({error:null})
-    //set the searchedproduct in state to the input
-    if(e.target.children[0].value === '' || e.target.children[0].value === ' ' ){
-      this.setState({erorr:'Please input a valid barcode'})
-    }
-    this.setState({searchedProduct:e.target.children[0].value})
+    this.setState({error:null})
+    //validation
+    if(e.target.children[0].value === '' || e.target.children[0].value === ' ' || isNaN(e.target.children[0].value) ){
+      this.setState({error:'Please input a valid barcode or add a new one '})
+    }else{
+      this.setState({searchedProduct:e.target.children[0].value})
     //start showing the spinner
-    
     this.setState({spinner:true})
     //fetch the information from the API using the input
     axios.get(`https://world.openfoodfacts.org/api/v0/product/${e.target.children[0].value}.json`)
@@ -35,23 +34,26 @@ class CalorieApp extends Component {
       //check if the product was found or not
       console.log(res)
       if(res.data.status_verbose !== 'product not found' && res.data.code !==null){
-        //update the state of displayed to be data we fetched
+      //update the state of displayed to be data we fetched
         this.setState({displayed:res.data});
         this.setState({spinner:false})
       }
       else{
         //show error
-        this.setState({error:'We are sorry but we do not have this product in our database.'})
+        this.setState(
+          {error:`We are sorry but we do not have this product in our database.But you can help us, and add it yourself using this link `}
+        )
         console.log('no product found')
       }
       //run the function to get the values from the state
       this.getProductValuesHandler()
     })
-    
     .catch(err =>{
       this.setState({error:'There was a problem'})
       console.log(err)
     })
+    }
+    
     e.preventDefault()
   
   }
@@ -61,7 +63,6 @@ class CalorieApp extends Component {
     if(this.state.spinner === true){
       this.setState({spinner:false});
     }
-
     //make copy of state 
     let values = {...this.state.values}
     //make copy of the state,regarding the product info
@@ -118,7 +119,7 @@ class CalorieApp extends Component {
     }
 
     if(this.state.error){
-      error = <h2 className={classes.error}>{this.state.error} {'But you can help us, and add it yourself using this link '}<a href='https://world.openfoodfacts.org/'>here</a> </h2>
+      error = <h2 className={classes.error}>{this.state.error}{<a href="https://world.openfoodfacts.org/">here</a>} </h2>
     }else{
       error = null;
     }
@@ -131,29 +132,28 @@ class CalorieApp extends Component {
     }
     
     return(
-      <Animated animationIn="bounceInRight" animationOut="fadeOut" isVisible={true}>
-      <div className={classes.CalorieApp}>
-      <h1>How does it work?</h1>
-        <div className={classes.description}>
-          <div>
-            <p>1.You simply create an account</p>
-            <img className={classes.HowTo} src={userLogo} alt='user'/>
-          </div>
-          <div>
-            <p>2.Then input the product Barcode</p>
-            <img className={classes.HowTo} src={nutrientsImg}  alt='nutrients'/>
-          </div>
-          <div>
-            <p>3.Find out the information you need</p>
-            <img className={classes.HowTo} src={caloriesImg}alt='calories'/>
-          </div>
-       </div>
-        <p>It's as EASY as that.</p>
-        <ProductForm submit={this.getInputValue}/>
-        {error}
-        {this.state.displayed ? allInfo : null}
-        
-         {intake}
+      <Animated animationIn="bounceInDown" animationOut="fadeOut" isVisible={true}>
+        <div className={classes.CalorieApp}>
+        <h1>How does it work?</h1>
+          <div className={classes.description}>
+            <div>
+              <p>1.You simply create an account</p>
+              <img className={classes.HowTo} src={userLogo} alt='user'/>
+            </div>
+            <div>
+              <p>2.Then input the product Barcode</p>
+              <img className={classes.HowTo} src={nutrientsImg}  alt='nutrients'/>
+            </div>
+            <div>
+              <p>3.Find out the information you need</p>
+              <img className={classes.HowTo} src={caloriesImg}alt='calories'/>
+            </div>
+        </div>
+          <p>It's as EASY as that.</p>
+          <ProductForm submit={this.getInputValue}/>
+          {error}
+          {this.state.displayed ? allInfo : null}
+          {intake}
         </div>
       </Animated>
     )

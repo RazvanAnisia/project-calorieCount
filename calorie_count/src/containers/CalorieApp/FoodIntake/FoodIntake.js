@@ -11,7 +11,8 @@ class FoodIntake extends Component{
       totalProtein:null,
       totalFats:null,
     },
-    showIntakeSummary:false
+    showIntakeSummary:false,
+    quantityError:null
   }
   getQuantityHandler = (e)=>{
     const input = e.target.children[1].value;
@@ -20,40 +21,46 @@ class FoodIntake extends Component{
 
   }
   calculateIntake = (inp)=>{
-     const inpNum = Number(inp);
-    //!!!make a copy of the props that were passed into this component
-    const nutriments = {...this.props.nutrients};
+    //validation
+    if(inp === '' || inp === ' ' || isNaN(inp) || Number(inp)>4000){
+      this.setState({quantityError:'Please input a valid quantity'})
+    }else{
+      const inpNum = Number(inp);
+      //make a copy of the props that were passed into this component
+      const nutriments = {...this.props.nutrients};
+     
+      let energy = Number(nutriments.energy_value);
+      let carbs = Number(nutriments.carbohydrates_100g);
+      let fats = Number(nutriments.fat_100g);
+      let protein = Number(nutriments.proteins_100g);
+      //make calculations
+      let caloriesCalc = (energy/(100/inpNum)).toFixed(2);
+      let carbsCalc = (carbs/(100/inpNum)).toFixed(2);
+      let fatsCalc = (fats/(100/inpNum)).toFixed(2);
+      let proteinCalc = (protein/(100/inpNum)).toFixed(2)
+      
+      //make copy of state
+      const products = [...this.state.products];
+      const name = this.props.product;
+      //make new object and add properties to it
+      const newProduct ={}
+      newProduct.name = name;
+      newProduct.calories = caloriesCalc;
+      newProduct.carbs = carbsCalc;
+      newProduct.fats = fatsCalc;
+      newProduct.proteins = proteinCalc;
+      newProduct.quantity = inpNum;
+      products.push(newProduct);
+      //set the state to the new state
+      this.setState({products:products}, this.updateTotal)
+    }
    
-    let energy = Number(nutriments.energy_value);
-    let carbs = Number(nutriments.carbohydrates_100g);
-    let fats = Number(nutriments.fat_100g);
-    let protein = Number(nutriments.proteins_100g);
-    //make calculations
-    let caloriesCalc = (energy/(100/inpNum)).toFixed(2);
-    let carbsCalc = (carbs/(100/inpNum)).toFixed(2);
-    let fatsCalc = (fats/(100/inpNum)).toFixed(2);
-    let proteinCalc = (protein/(100/inpNum)).toFixed(2)
-    
-    //make copy of state
-    const products = [...this.state.products];
-    const name = this.props.product;
-    const newProduct ={}
-    newProduct.name = name;
-    newProduct.calories = caloriesCalc;
-    newProduct.carbs = carbsCalc;
-    newProduct.fats = fatsCalc;
-    newProduct.proteins = proteinCalc;
-    newProduct.quantity = inpNum;
-    products.push(newProduct);
-    //set the state to the new state
-    // this.setState({total:totalCalc}, ()=> this.updateTotal)
-    this.setState({products:products}, this.updateTotal)
   }
 
   updateTotal=()=>{
     const total = {...this.state.total};
     const products = [...this.state.products];
-    console.log(products)
+   
     let calories = 0;
     let proteins = 0;
     let fats = 0;
@@ -73,13 +80,22 @@ class FoodIntake extends Component{
     this.setState({total:total});
 
   }
+
   showSummary =()=>{
-  const show =!this.state.showIntakeSummary;
-  this.setState({showIntakeSummary:show})
+    const show =!this.state.showIntakeSummary;
+    this.setState({showIntakeSummary:show})
   }
+
   render(){
     let showInfo;
     let summary;
+    let error;
+    if(this.state.quantityError){
+      error = <h2 className={classes.error}>{this.state.quantityError}</h2>;
+    }
+    else{
+      error = null;
+    }
     if(this.state.showIntakeSummary){
       summary = <IntakeSummary productsData={this.state.products} setState={(p,c)=>this.setState(p,c)} update={this.updateTotal}/>;
     }else{
@@ -109,6 +125,7 @@ class FoodIntake extends Component{
           <input type="text" placeholder="write quantity"></input>
           <input type="submit" value="Add"></input>
         </form>
+        {error}
         <h4>Total intake</h4>
         {showInfo}
       </div>

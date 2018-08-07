@@ -1,6 +1,5 @@
 .CalorieApp{
   background:linear-gradient(rgb(97, 201, 144),rgb(40, 168, 207));
-   
 }
 .CalorieApp h1{
   margin:0;
@@ -13,7 +12,6 @@
 }
 .BarcodeForm{
   text-align: center;
- 
 }
 .BarcodeInput{
    width:40%;
@@ -62,6 +60,7 @@ p{
 .Info ul{
   display:block;
   margin:0 35%;
+
 }
 .Info li{
   list-style: none;

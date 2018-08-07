@@ -5,11 +5,9 @@ h4{
 }
 .form{
   display: block;
-  width:30%;
+  width:25%;
   margin:1rem auto;
- 
- 
-}
+ }
 .form label{
   margin-bottom: 2rem;
 }
@@ -66,6 +64,14 @@ li span{
 .summaryBtn:hover{
   cursor: pointer;
 
+}
+.error{
+  background-color:tomato;
+  color:white;
+  text-align: center;
+  height:3rem;
+  font-size:1rem;
+  padding:0.5rem;
 }
 .hideBtn{
   display:block;
