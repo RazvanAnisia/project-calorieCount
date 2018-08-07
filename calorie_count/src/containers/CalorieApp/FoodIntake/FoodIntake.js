@@ -94,7 +94,7 @@ class FoodIntake extends Component{
             <li><span>Protein:</span> {this.state.total.totalProtein}g</li>
             <li><span>Fats:</span> {this.state.total.totalFats}g</li>
         </ul>
-        <button onClick={this.showSummary}>{this.state.showIntakeSummary ? 'Hide Summary' :'Show Summary' }</button>
+        <button className={this.state.showIntakeSummary ? classes.summaryBtn :classes.hideBtn} onClick={this.showSummary}>{this.state.showIntakeSummary ? 'Hide Summary' :'Show Summary' }</button>
         {summary}
       </div>
      )

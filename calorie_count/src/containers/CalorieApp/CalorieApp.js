@@ -91,11 +91,11 @@ class CalorieApp extends Component {
     if(this.state.values.nutriments){
       var nutrients = {...this.state.values.nutriments}
       displayNut = [
-        <li key={'energy'}>Energy:{nutrients.energy_value} {nutrients.energy_unit}</li>,
-        <li key={'carbs'}>Carbohydrates: {nutrients.carbohydrates_100g} g </li>,
-        <li key={'fats'}>Fats: {nutrients.fat_100g} g </li>,
-        <li key={'protein'}>Protein:{nutrients.proteins_100g} g</li>,
-        <li key={'sodium'}>Sodium :{Math.ceil(nutrients.sodium_100g)} g</li>
+        <li key={'energy'}><span>Energy:</span>{nutrients.energy_value} {nutrients.energy_unit}</li>,
+        <li key={'carbs'}><span>Carbohydrates:</span> {nutrients.carbohydrates_100g} g </li>,
+        <li key={'fats'}><span>Fats:</span> {nutrients.fat_100g} g </li>,
+        <li key={'protein'}><span>Protein:</span>{nutrients.proteins_100g} g</li>,
+        <li key={'sodium'}><span>Sodium: </span>{Math.ceil(nutrients.sodium_100g)} g</li>
       ]
     }
     if(this.state.spinner && this.state.error === null  ){
@@ -105,8 +105,10 @@ class CalorieApp extends Component {
       <Animated animationIn="bounceInUp" animationOut="fadeOut" isVisible={true}><div className={classes.Info}>
         <p className = {classes.name}>  {info.productName ? info.productName : null}</p>
         <p>{info.quantity}</p>
-        <img className={classes.productImg} src={info.imageUrl} alt=''/>
-        <img className={classes.productImgNutrition} src={info.imageNutrition} alt=''/>
+        <div className={classes.imgDiv}>
+          <img className={classes.productImg} src={info.imageUrl} alt=''/>
+          <img className={classes.productImgNutrition} src={info.imageNutrition} alt=''/>
+        </div>
         <p> Per :{info.NutritionPer} </p>
         <ul>
           {displayNut}

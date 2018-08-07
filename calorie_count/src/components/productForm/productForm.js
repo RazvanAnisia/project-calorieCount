@@ -6,7 +6,7 @@ const productForm = (props)=>{
     <form onSubmit={props.submit} className={classes.BarcodeForm}>
           <input  className={classes.BarcodeInput}type='text' placeholder='Product bardcode here'/>
           <br/>
-          <input className={classes.submitButton} type='Submit' />
+          <input className={classes.submitButton} type='Submit' value="Search"/>
     </form>
   )
 }

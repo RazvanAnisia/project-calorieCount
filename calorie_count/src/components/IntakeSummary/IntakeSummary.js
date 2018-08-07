@@ -24,6 +24,8 @@ class intakeSummary extends Component {
     return(
       <div>
         <ul className={classes.summary}>
+        <p>Keep in mind, the average intake for an adult male is between 2000-2500 kcal/day</p>
+        <p>Try to keep your intake in this range</p>
            {summary}              
        </ul>
       </div>

@@ -5,11 +5,13 @@
   border-radius:5px;
   width:40%;
   display:block;
-  margin:0 auto;
+  margin:1rem auto ;;
   padding-top:1rem;
+  
 }
 .summary li{
   list-style:none;
+  margin-bottom:0.5rem;
 
 }
 .name{
@@ -21,10 +23,30 @@ li span{
   font-family:'Lato', serif;
   font-weight:700;
 }
-/* span{
-  margin:5px 0.5rem;
-} */
+
 .summary li{
   display:flex;
   justify-content: space-around;
+}
+.summary button{
+  background:tomato;
+  border:1px solid black;
+  color:white;
+}
+.summary p{
+  text-align: center;
+  margin-right:1rem;
+}
+.summary button:hover{
+  cursor: pointer;
+  transform:scale(1.03)
+}
+@media (max-width:630px){
+  .summary{
+    font-size:0.8rem;
+    width:60%;
+  }
+  .summary button{
+    height:0.9rem;
+  }
 }
