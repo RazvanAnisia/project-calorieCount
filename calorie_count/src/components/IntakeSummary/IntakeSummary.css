@@ -1,0 +1,30 @@
+.summary{
+  background:linear-gradient(rgb(231, 190, 5),rgb(40, 168, 207));
+  /* box-shadow: 2px 2px 2px black; */
+  border:2px solid black;
+  border-radius:5px;
+  width:40%;
+  display:block;
+  margin:0 auto;
+  padding-top:1rem;
+}
+.summary li{
+  list-style:none;
+
+}
+.name{
+  font-family: 'Lobster',cursive;
+  color:white;
+  
+}
+li span{
+  font-family:'Lato', serif;
+  font-weight:700;
+}
+/* span{
+  margin:5px 0.5rem;
+} */
+.summary li{
+  display:flex;
+  justify-content: space-around;
+}
