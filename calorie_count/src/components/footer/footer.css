@@ -72,4 +72,15 @@
 }
 .footer .logo{
   width:100px;
+  margin:0 47%;
+}
+@media(max-width:600px){
+  .footer .logo{
+    margin:0 45%;
+  }
+}
+@media(max-width:400px){
+  .footer .logo{
+    margin:0 32%;
+  }
 }

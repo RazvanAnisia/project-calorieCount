@@ -16,7 +16,8 @@ class CalorieApp extends Component {
     displayed:'',
     values:{},
     spinner:false,
-    error:null
+    error:null,
+    invalidData:false
   }
 
   getInputValue = (e)=>{
@@ -59,6 +60,10 @@ class CalorieApp extends Component {
   }
 
   getProductValuesHandler =()=>{
+    //remove invalid data
+    if(this.state.invalidData){
+      this.setState({invalidData:false})
+    }
     //if there is a spinner remove it
     if(this.state.spinner === true){
       this.setState({spinner:false});
@@ -77,7 +82,11 @@ class CalorieApp extends Component {
       values.imageNutrition = data.image_ingredients_url;
       values.NutritionPer = data.nutrition_data_per;
       values.nutriments = data.nutriments;
-      console.log(this.state.values.nutriments)
+     
+      if(!values.nutriments.energy_value){
+        this.setState({invalidData:true})
+        console.log('invalid')
+      }
       //set the state to the new state
       this.setState({values:values})
     }
@@ -92,11 +101,26 @@ class CalorieApp extends Component {
     if(this.state.values.nutriments){
       var nutrients = {...this.state.values.nutriments}
       displayNut = [
-        <li key={'energy'}><span>Energy:</span>{nutrients.energy_value} {nutrients.energy_unit}</li>,
-        <li key={'carbs'}><span>Carbohydrates:</span> {nutrients.carbohydrates_100g} g </li>,
-        <li key={'fats'}><span>Fats:</span> {nutrients.fat_100g} g </li>,
-        <li key={'protein'}><span>Protein:</span>{nutrients.proteins_100g} g</li>,
-        <li key={'sodium'}><span>Sodium: </span>{Math.ceil(nutrients.sodium_100g)} g</li>
+        <li key={'energy'}>
+          <span>Energy:</span>{nutrients.energy_value ? nutrients.energy_value : 'Not available'}
+          {nutrients.energy_unit}
+        </li>,
+        <li key={'carbs'}>
+          <span>Carbohydrates:</span>
+          {nutrients.carbohydrates_100g ? nutrients.carbohydrates_100g : 'Not available' } g
+         </li>,
+        <li key={'fats'}>
+          <span>Fats:</span> 
+          {nutrients.fat_100g ? nutrients.fat_100g : 'Not available'  } g 
+        </li>,
+        <li key={'protein'}>
+        <span>Protein:</span>
+        {nutrients.proteins_100g ? nutrients.proteins_100g : 'Not available'} g
+        </li>,
+        <li key={'sodium'}>
+          <span>Sodium: </span>
+          {nutrients.sodium_100g ? Math.ceil(nutrients.sodium_100g) : 'Not available'} g
+        </li>
       ]
     }
     if(this.state.spinner && this.state.error === null  ){
@@ -105,12 +129,12 @@ class CalorieApp extends Component {
       allInfo = (
       <Animated animationIn="bounceInUp" animationOut="fadeOut" isVisible={true}><div className={classes.Info}>
         <p className = {classes.name}>  {info.productName ? info.productName : null}</p>
-        <p>{info.quantity}</p>
+        <p>{info.quantity ? info.quantity : 'Not available'}</p>
         <div className={classes.imgDiv}>
           <img className={classes.productImg} src={info.imageUrl} alt=''/>
           <img className={classes.productImgNutrition} src={info.imageNutrition} alt=''/>
         </div>
-        <p> Per :{info.NutritionPer} </p>
+        <p> Per :{info.NutritionPer ? info.NutritionPer : 'Not available'} </p>
         <ul>
           {displayNut}
         </ul>
@@ -126,7 +150,7 @@ class CalorieApp extends Component {
 
     if(this.state.values){
       let info = this.state.values;
-      intake = <FoodIntake serving={info.NutritionPer} product={info.productName} nutrients={this.state.values.nutriments} />
+      intake = <FoodIntake  invalid={this.state.invalidData} serving={info.NutritionPer} product={info.productName} nutrients={this.state.values.nutriments} />
     }else{
       intake = <FoodIntake/>
     }

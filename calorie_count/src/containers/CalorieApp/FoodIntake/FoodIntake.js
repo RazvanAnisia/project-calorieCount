@@ -21,13 +21,15 @@ class FoodIntake extends Component{
 
   }
   calculateIntake = (inp)=>{
-    //validation
+    this.setState({quantityError:null})
+    const inpNum = Number(inp);
+    //make a copy of the props that were passed into this component
+    const nutriments = {...this.props.nutrients};
+      
+    // input validation
     if(inp === '' || inp === ' ' || isNaN(inp) || Number(inp)>4000){
       this.setState({quantityError:'Please input a valid quantity'})
     }else{
-      const inpNum = Number(inp);
-      //make a copy of the props that were passed into this component
-      const nutriments = {...this.props.nutrients};
      
       let energy = Number(nutriments.energy_value);
       let carbs = Number(nutriments.carbohydrates_100g);
@@ -123,7 +125,7 @@ class FoodIntake extends Component{
         <form className={classes.form} onSubmit={this.getQuantityHandler}>
           <label>Quantity <span>in g: </span></label>
           <input type="text" placeholder="write quantity"></input>
-          <input type="submit" value="Add"></input>
+          <input disabled = {this.props.invalid} type="submit" value="Add"></input>
         </form>
         {error}
         <h4>Total intake</h4>
