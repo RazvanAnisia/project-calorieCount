@@ -2,7 +2,7 @@
   "name": "calorie_count",
   "version": "0.1.0",
   "private": true,
-  "homepage":"http://{RazvanAnisia}.github.io/{CalorieCount}",
+  "homepage": "http://razvananisia.github.io/CalorieCount",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
@@ -55,7 +55,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "collectCoverageFrom": [
