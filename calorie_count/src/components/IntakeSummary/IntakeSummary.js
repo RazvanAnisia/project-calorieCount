@@ -17,12 +17,18 @@ class intakeSummary extends Component {
     let summary = productsData.map((product,index)=>{
       return (
         <li key={index} ><span  className={classes.name}>{product.name}</span><span>{product.quantity}g</span> <span>{product.calories}kcal</span>
-        <button onClick={()=>this.removeProduct(index)}>X</button> </li>
+        <button onClick={()=>this.removeProduct(index)}>x</button> </li>
       )
     })
 
     return(
       <div>
+        <p>Your healthy average calorie intake  depends on your gender, age, height and metabolism.</p>
+         <p>To find out the magical number and other information, visit this 
+          <a href="https://www.healthline.com/nutrition/how-many-calories-per-day" 
+          target="_blank" rel='noreferrer noopener'> page
+          </a>
+         </p>
         <ul className={classes.summary}>
         <p>Keep in mind, the average intake for an adult male is between 2000-2500 kcal/day</p>
         <p>Try to keep your intake in this range</p>

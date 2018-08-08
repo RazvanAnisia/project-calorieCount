@@ -1,11 +1,10 @@
 .summary{
   background:linear-gradient(rgb(231, 190, 5),rgb(40, 168, 207));
-  /* box-shadow: 2px 2px 2px black; */
   border:2px solid black;
   border-radius:5px;
   width:40%;
   display:block;
-  margin:1rem auto ;;
+  margin:1rem auto ;
   padding-top:1rem;
   
 }
@@ -41,12 +40,29 @@ li span{
   cursor: pointer;
   transform:scale(1.03)
 }
-@media (max-width:630px){
+p a{
+  color:white;
+  text-decoration: none;
+  
+}
+@media (max-width:720px){
   .summary{
     font-size:0.8rem;
     width:60%;
   }
   .summary button{
     height:0.9rem;
+    padding-bottom:5px;
   }
+  .summary li{
+    margin-left:-2.5rem;
+  }
+  .summary p{
+    margin-left:-2.5rem;
+  }
+  p{
+    font-size:0.8rem;
+    margin:1rem 1rem;
+  }
+  
 }

@@ -17,11 +17,11 @@ class View extends Component{
       <div>
           <Header/>
            <Switch>
-            <Route path='/calorie-count'  component={CalorieApp}/>
+            <Route path = '/calorie-count'  component={CalorieApp}/>
             <Route path = '/login' component ={LoginPage}/>
-            <Route path='/contact' exact  component={ContactPage}/>
-            <Route path='/register' exact  component={RegisterPage}/>
-            <Route path='/' exact  component={Hero}/>
+            <Route path = '/contact' exact  component={ContactPage}/>
+            <Route path = '/register' exact  component={RegisterPage}/>
+            <Route path = '/' exact  component={Hero}/>
           </Switch>
           <Footer/>
         </div>

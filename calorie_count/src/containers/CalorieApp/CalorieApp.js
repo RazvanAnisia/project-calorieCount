@@ -131,8 +131,10 @@ class CalorieApp extends Component {
         <p className = {classes.name}>  {info.productName ? info.productName : null}</p>
         <p>{info.quantity ? info.quantity : 'Not available'}</p>
         <div className={classes.imgDiv}>
-          <img className={classes.productImg} src={info.imageUrl} alt=''/>
-          <img className={classes.productImgNutrition} src={info.imageNutrition} alt=''/>
+          {info.imageUrl ? <img className={classes.productImg} src={info.imageUrl} alt=""/>
+           : <p>{'No  product image available'}</p>}
+          {info.imageNutrition ? <img className={classes.productImgNutrition} src={info.imageNutrition} alt=''/> 
+          : <p>{'No  nutrition image available'}</p>}
         </div>
         <p> Per :{info.NutritionPer ? info.NutritionPer : 'Not available'} </p>
         <ul>

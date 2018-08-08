@@ -42,6 +42,8 @@
 }
 p{
   font-weight:bold;
+  text-align: center;
+  margin-right:2rem;
   
 }
 .Info img{border: 3px solid grey;
