@@ -1,4 +1,4 @@
-.Header {
+.header {
   /* background-color: #222; */
   background:linear-gradient(rgb(11, 69, 87),rgb(10, 56, 70));
   height: 60px;
@@ -9,7 +9,7 @@
 }
 nav{
   width:80%;
-  max-height:100%;
+  max-height:80%;
 }
 .navElements{
   display:flex;
@@ -25,24 +25,13 @@ nav{
   color:white;
   font-size:1.2rem;
 }
-/* .navElements a:active {
-  color:blue;
-  background:red;
-} */
+
 .navElements a:hover{
-  /* color:rgb(59, 212, 136); */
   color:tomato;
   
   border-bottom:2px solid tomato;
   padding-bottom:0.6rem;
 }
-
-/* @media(max-height:700px){
-  nav{
-    
-  }
-} */
-
 @media(max-width: 1000px ){
   
   .navElements{
@@ -56,8 +45,6 @@ nav{
     background:red;
     width:3rem;
     height:100vh;
-    /* background-color: rgb(65, 60, 60); */
-    /* background:#34DD9F; */
     background:linear-gradient(to left,rgb(34, 170, 163),rgb(40, 168, 207));
     box-shadow: 2px 2px 2px  black;
     justify-content: initial;
@@ -65,7 +52,7 @@ nav{
   .navElements li{
     list-style: none;
     padding:0;
-    margin:2.5rem -2.4rem 8rem; 
+    margin:1rem -2.4rem 8rem; 
      
   }
   .navElements a{

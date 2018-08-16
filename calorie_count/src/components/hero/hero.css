@@ -1,4 +1,4 @@
-.Hero{
+.hero{
   max-width:100%;
   height:1000px;
   background: black url(../../assets/hero_plate_logo.jpg) right no-repeat;
@@ -6,7 +6,7 @@
   background-size:cover;
 
 }
-.HeroTitle{
+.heroTitle{
  font-family: 'Lobster', cursive;
  margin:0;
  color:white;
@@ -15,7 +15,7 @@
  font-size:3.5rem;
  text-shadow:2px 2px 2px black;
 }
-.Hero p{
+.hero p{
   font-size:2rem;
   /* color:rgb(245, 122, 51); */
   color:rgb(33, 191, 223);
@@ -31,7 +31,7 @@
 
 }
 @media(max-width:1000px){
-  .HeroTitle{
+  .heroTitle{
     margin:0 15% 0 15%;
     margin-left:7rem;
     padding-top:3rem;
@@ -44,24 +44,24 @@
     }
 }
 @media(max-width:650px){
-  .HeroTitle{
+  .heroTitle{
     margin-left:7rem;
     padding-top:3rem;
     font-size:2rem;
     }
-    .Hero p{
+    .hero p{
       font-size:1.1rem;
       margin: 10rem 0.5rem 0 5.8rem; ;;
       
     }
 }
 @media(max-width:450px){
-  .HeroTitle{
+  .heroTitle{
     margin-left:5.5rem;
     padding-top:3rem;
     font-size:2rem;
     }
-    .Hero p{
+    .hero p{
       font-size:1.1rem;
       margin: 3rem 0.5rem 0 5.8rem; ;;
       

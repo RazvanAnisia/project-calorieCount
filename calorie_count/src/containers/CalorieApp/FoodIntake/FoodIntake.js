@@ -1,6 +1,7 @@
 import React,{Component}  from 'react';
 import classes from './FoodIntake.css';
 import IntakeSummary from '../../../components/IntakeSummary/IntakeSummary';
+import potatoImg from '../../../assets/potato_surprised.jpeg';
 //54491472
 class FoodIntake extends Component{
   state={
@@ -84,7 +85,7 @@ class FoodIntake extends Component{
   }
 
   showSummary =()=>{
-    const show =!this.state.showIntakeSummary;
+    const show = !this.state.showIntakeSummary;
     this.setState({showIntakeSummary:show})
   }
 
@@ -92,6 +93,7 @@ class FoodIntake extends Component{
     let showInfo;
     let summary;
     let error;
+    let potato;
     if(this.state.quantityError){
       error = <h2 className={classes.error}>{this.state.quantityError}</h2>;
     }
@@ -99,37 +101,52 @@ class FoodIntake extends Component{
       error = null;
     }
     if(this.state.showIntakeSummary){
-      summary = <IntakeSummary productsData={this.state.products} setState={(p,c)=>this.setState(p,c)} update={this.updateTotal}/>;
+      summary = <IntakeSummary 
+      productsData={this.state.products} 
+      setState={(p,c)=>this.setState(p,c)} 
+      update={this.updateTotal}/>;
     }else{
       summary = null;
     }
     if(this.state.products.length >0){
       showInfo = (
      <div>
-        <ul className={classes.info}>
+        <ul className = {classes.info}>
             <li><span>Calories:</span> {this.state.total.totalCalories}Kcal</li>
             <li><span>Carbs:</span> {this.state.total.totalCarbs} g</li>
             <li><span>Protein:</span> {this.state.total.totalProtein}g</li>
             <li><span>Fats:</span> {this.state.total.totalFats}g</li>
         </ul>
-        <button className={this.state.showIntakeSummary ? classes.summaryBtn :classes.hideBtn} onClick={this.showSummary}>{this.state.showIntakeSummary ? 'Hide Summary' :'Show Summary' }</button>
+        <button className = {this.state.showIntakeSummary ? classes.summaryBtn :classes.hideBtn} onClick={this.showSummary}>{this.state.showIntakeSummary ? 'Hide Summary' :'Show Summary' }</button>
         {summary}
       </div>
      )
     }else{
-      showInfo=null;
+      showInfo = null;
     }
+    
+    if(this.state.total.totalCalories > 2500){
+      potato = 
+      <div className = {classes.potato}>
+        <img src = {potatoImg} alt ='potato ' />
+        <h3>Be careful with those calories!</h3>
+      </div>;
+    }else{
+      potato = null;
+    }
+    
        return(
-      <div className={classes.FoodIntake}>
+      <div>
         <p>Add this to your daily intake:</p>
-        <form className={classes.form} onSubmit={this.getQuantityHandler}>
+        <form className = {classes.form} onSubmit ={this.getQuantityHandler}>
           <label>Quantity <span>in g: </span></label>
-          <input type="text" placeholder="write quantity"></input>
-          <input disabled = {this.props.invalid} type="submit" value="Add"></input>
+          <input type="text" placeholder ="write quantity"></input>
+          <input disabled = {this.props.invalid} type="submit" value ="Add"></input>
         </form>
         {error}
         <h4>Total intake</h4>
         {showInfo}
+        {potato}
       </div>
     )
   }

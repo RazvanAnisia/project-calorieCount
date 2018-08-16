@@ -6,7 +6,7 @@ class RegisterPage extends Component{
    render(){
     return(
       <Animated animationIn="bounceInRight" animationOut="fadeOut" isVisible={true}>
-        <div className={classes.RegisterPage}>
+        <div className={classes.registerPage}>
           <div className={classes.wrap}>
             <h1>Register</h1>
             <h5>Create an account</h5>

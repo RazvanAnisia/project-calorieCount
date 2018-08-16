@@ -1,9 +1,9 @@
-.ContactPage{
+.contactPage{
   height:350px;
   background:linear-gradient(rgb(97, 201, 144),rgb(207, 149, 40));
   padding-top:1rem;
 }
-.ContactPage h1{
+.cContactPage h1{
   text-align: center;
   font-family: 'Lobster', cursive;
   margin-top:0;
@@ -15,17 +15,17 @@
   margin-top:1rem;
   margin:0 auto;
 }
-.Links a{
+.links a{
   color:white;
   font-weight: 700;
   text-decoration: none;
 }
-.Links a:hover{
+.links a:hover{
   color:tomato;
   
 }
 @media(max-width:450px){
-  .ContactPage{
+  .contactPage{
     font-size:0.8rem;
   }
   .wrap{

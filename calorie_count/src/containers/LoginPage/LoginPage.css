@@ -1,9 +1,9 @@
-.LoginPage{
+.loginPage{
   height:500px;
   background:linear-gradient(rgb(97, 201, 144),rgb(40, 168, 207));
   padding-top:1rem;
 }
-.LoginPage h1{
+.loginPage h1{
   text-align: center;
   font-family: 'Lobster', cursive;
   margin-top:0;
@@ -18,11 +18,11 @@
   border-radius:5px;
   margin-top:1rem;
 }
-.LoginPage label{
+.loginPage label{
   display:block;
   margin:10px 0 0 1rem;
 }
-.LoginPage input{
+.loginPage input{
   display:block;
   margin:10px auto;;
   width:80%;
@@ -30,15 +30,15 @@
   border:none;
   height:2rem;
 }
-.LoginPage h5{
+.loginPage h5{
   text-align: center;
 }
-.LoginPage a:active,
-.LoginPage a:hover{
+.loginPage a:active,
+.loginPage a:hover{
   color:white;
 }
 
-.LoginPage input[type="submit"]{
+.loginPage input[type="submit"]{
   background:tomato;
   width:40%;
   border:none;
@@ -49,7 +49,7 @@
   box-shadow:1px 1px 1px black;
   font-size:1rem;
 }
-.LoginPage input[type="submit"]:hover{
+.loginPage input[type="submit"]:hover{
 transform:scale(1.04)
 }
 @media(max-width:700px){

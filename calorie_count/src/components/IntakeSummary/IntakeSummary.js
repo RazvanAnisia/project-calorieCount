@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import classes from './IntakeSummary.css';
 
+
 class intakeSummary extends Component {
   removeProduct=(productIndex)=>{
     //Make copy of props
@@ -16,11 +17,16 @@ class intakeSummary extends Component {
     //map through an create the li's for each product with the data
     let summary = productsData.map((product,index)=>{
       return (
-        <li key={index} ><span  className={classes.name}>{product.name}</span><span>{product.quantity}g</span> <span>{product.calories}kcal</span>
-        <button onClick={()=>this.removeProduct(index)}>x</button> </li>
+        <li key={index} >
+        <span className={classes.name}>{product.name}</span>
+        <span>{product.quantity}g</span> 
+        <span>{product.calories}kcal</span>
+        <button onClick={()=>this.removeProduct(index)}>x</button> 
+        </li>
       )
     })
-
+   
+     
     return(
       <div>
         <p>Your healthy average calorie intake  depends on your gender, age, height and metabolism.</p>
@@ -32,7 +38,7 @@ class intakeSummary extends Component {
         <ul className={classes.summary}>
         <p>Keep in mind, the average intake for an adult male is between 2000-2500 kcal/day</p>
         <p>Try to keep your intake in this range</p>
-           {summary}              
+        {summary}   
        </ul>
       </div>
     )

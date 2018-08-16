@@ -1,7 +1,7 @@
-.BarcodeForm{
+.barcodeForm{
   text-align: center;
 }
-.BarcodeInput{
+.barcodeInput{
    width:40%;
    height:1.5rem;
    margin:1rem auto;

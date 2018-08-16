@@ -1,9 +1,9 @@
-.RegisterPage{
+.registerPage{
   height:500px;
   background:linear-gradient(rgb(97, 201, 144),rgb(207, 149, 40));
   padding-top:1rem;
 }
-.RegisterPage h1{
+.registerPage h1{
   text-align: center;
   font-family: 'Lobster', cursive;
   margin-top:0;
@@ -18,11 +18,11 @@
   border-radius:5px;
   margin-top:1rem;
 }
-.RegisterPage label{
+.registerPage label{
   display:block;
   margin:10px 0 0 1rem;
 }
-.RegisterPage input{
+.registerPage input{
   display:block;
   margin:10px auto;;
   width:80%;
@@ -30,15 +30,15 @@
   border:none;
   height:2rem;
 }
-.RegisterPage h5{
+.registerPage h5{
   text-align: center;
 }
-.RegisterPage a:active,
-.RegisterPage a:hover{
+.registerPage a:active,
+.registerPage a:hover{
   color:white;
 }
 
-.RegisterPage input[type="submit"]{
+.registerPage input[type="submit"]{
   background:tomato;
   width:40%;
   border:none;
@@ -49,7 +49,7 @@
   box-shadow:1px 1px 1px black;
   font-size:1rem;
 }
-.RegisterPage input[type="submit"]:hover{
+.registerPage input[type="submit"]:hover{
 transform:scale(1.04)
 }
 @media(max-width:700px){
