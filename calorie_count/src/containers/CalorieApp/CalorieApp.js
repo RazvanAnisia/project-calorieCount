@@ -10,6 +10,7 @@ import FoodIntake from './FoodIntake/FoodIntake';
 
 
 //  cola 54491472
+
 class CalorieApp extends Component {
   state ={
     searchedProduct:'',
@@ -69,12 +70,12 @@ class CalorieApp extends Component {
       this.setState({spinner:false});
     }
     //make copy of state 
-    let values = {...this.state.values}
+    let values = {...this.state.values};
     //make copy of the state,regarding the product info
-    let data = {...this.state.displayed.product}
+    let data = {...this.state.displayed.product};
     
     if(this.state.displayed!== ''){
-      console.log(data)
+      
       //add these properties to the values object
       values.productName = data.product_name;
       values.quantity = data.quantity;
@@ -85,7 +86,7 @@ class CalorieApp extends Component {
      
       if(!values.nutriments.energy_value){
         this.setState({invalidData:true})
-        console.log('invalid')
+       
       }
       //set the state to the new state
       this.setState({values:values})
@@ -145,14 +146,17 @@ class CalorieApp extends Component {
     }
 
     if(this.state.error){
-      error = <h2 className={classes.error}>{this.state.error}{<a href="https://world.openfoodfacts.org/">here</a>} </h2>
+      error = <h2 className={classes.error}>{this.state.error}
+      {this.state.error === 'There was a problem' ? null :<a href="https://world.openfoodfacts.org/">here</a>} </h2>
     }else{
       error = null;
     }
 
     if(this.state.values){
       let info = this.state.values;
-      intake = <FoodIntake  invalid={this.state.invalidData} serving={info.NutritionPer} product={info.productName} nutrients={this.state.values.nutriments} />
+      intake = <FoodIntake  invalid={this.state.invalidData} 
+      serving={info.NutritionPer} product={info.productName}
+      nutrients={this.state.values.nutriments} />
     }else{
       intake = <FoodIntake/>
     }

@@ -4,7 +4,7 @@ import IntakeSummary from '../../../components/IntakeSummary/IntakeSummary';
 import potatoImg from '../../../assets/potato_surprised.jpeg';
 //54491472
 class FoodIntake extends Component{
-  state={
+  state ={
     products:[],
     total:{
       totalCalories:null,
@@ -46,7 +46,7 @@ class FoodIntake extends Component{
       const products = [...this.state.products];
       const name = this.props.product;
       //make new object and add properties to it
-      const newProduct ={}
+      const newProduct ={};
       newProduct.name = name;
       newProduct.calories = caloriesCalc;
       newProduct.carbs = carbsCalc;
@@ -88,6 +88,7 @@ class FoodIntake extends Component{
     const show = !this.state.showIntakeSummary;
     this.setState({showIntakeSummary:show})
   }
+  
 
   render(){
     let showInfo;
