@@ -5,7 +5,7 @@ import CalorieApp from '../../containers/CalorieApp/CalorieApp';
 import Footer from '../../components/footer/footer';
 import {Route,Switch} from 'react-router-dom';
 import LoginPage from '../LoginPage/LoginPage';
-import ContactPage from '../../components/contactPage/contactPage';
+import ContactPage from '../../components/contactPage/ContactPage.js';
 import RegisterPage from '../../containers/RegisterPage/RegisterPage';
 
 class View extends Component{

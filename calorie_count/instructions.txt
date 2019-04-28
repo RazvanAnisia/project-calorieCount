@@ -1,0 +1,3 @@
+App uses https://world.openfoodfacts.org/ API, to show information regarding the bardcode you are scanning.
+Uses AXIOS for fetching the API data.
+Implemented spinner

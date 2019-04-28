@@ -1,6 +1,6 @@
 .header {
   /* background-color: #222; */
-  background:linear-gradient(rgb(11, 69, 87),rgb(10, 56, 70));
+  background:linear-gradient(rgb(11, 69, 87),rgb(28, 30, 30));
   height: 60px;
   padding:10px;
   color: white;
@@ -28,12 +28,12 @@ nav{
 
 .navElements a:hover{
   color:tomato;
-  
+
   border-bottom:2px solid tomato;
   padding-bottom:0.6rem;
 }
 @media(max-width: 1000px ){
-  
+
   .navElements{
     z-index:1000;
     display:flex;
@@ -52,8 +52,8 @@ nav{
   .navElements li{
     list-style: none;
     padding:0;
-    margin:1rem -2.4rem 8rem; 
-     
+    margin:1rem -2.4rem 8rem;
+
   }
   .navElements a{
     text-decoration: none;
@@ -69,7 +69,7 @@ nav{
     border-left:5px solid rgba(255, 255, 255, 0.61) ;
     border-bottom: none;
   }
-  
+
 
 }
 @media(max-width: 500px){
@@ -80,4 +80,3 @@ nav{
    font-size:.85rem;
  }
 }
-

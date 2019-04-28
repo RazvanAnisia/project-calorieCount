@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './contactPage.css';
+import classes from './ContactPage.css';
 import {Animated} from "react-animated-css";
 
 const contactPage = ()=>{
@@ -12,7 +12,7 @@ const contactPage = ()=>{
             <p>If you wish to contact the creator ,you can find him using these links</p>
             <ul className ={classes.links}>
                 <li>
-                  <a href ='https://github.com/RazvanAnisia' target='_blank' 
+                  <a href ='https://github.com/RazvanAnisia' target='_blank'
                   rel='noreferrer noopener'>Github</a>
                 </li>
                 <li>
@@ -23,9 +23,9 @@ const contactPage = ()=>{
                   <a href ='https://www.facebook.com/profile.php?id=100003691274985&ref=bookmarks'
                    target ='_blank' rel='noreferrer noopener'>Facebook</a>
                 </li>
-                
+
             </ul>
-          </div> 
+          </div>
         </div>
       </Animated>
       )
