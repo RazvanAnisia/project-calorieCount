@@ -2,25 +2,30 @@
   text-align: center;
 }
 .barcodeInput{
-   width:40%;
+  min-width:370px;
+  max-width:450px;
    height:1.5rem;
    margin:1rem auto;
    border-radius:5px;
    border:2px solid black;
+   padding: 4px;
+   margin-bottom:3rem;
 }
 
 .submitButton{
   border:none;
-  padding:1rem;
   color:white;;
   background:#E93925;
   cursor:pointer;
   font-size:1rem;
   box-shadow: 1px 1px 1px black;
   border-radius:5px ;
+  padding: 0.5rem 3rem;
+
 }
 .submitButton:hover{
-  transform:scale(1.04)
+  transform:scale(1.02);
+  background:rgb(33, 191, 223);
 }
 @media(max-width:450px){
   .BarcodeInput{

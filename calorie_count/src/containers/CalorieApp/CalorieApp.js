@@ -32,7 +32,7 @@ class CalorieApp extends Component {
       axios.get(`https://world.openfoodfacts.org/api/v0/product/${e.target.children[0].value}.json`)
     .then(res=>{
       //check if the product was found or not
-      console.log(res)
+      // console.log(res)
       if(res.data.status_verbose !== 'product not found' && res.data.code !== null){
       //update the state of displayed to be data we fetched
         this.setState({displayed:res.data});
@@ -198,7 +198,7 @@ class CalorieApp extends Component {
               </Animated>
             </div>
         </div>
-          <p>It's as EASY as that.</p>
+          <p class={classes.easy}>It's as EASY as that.</p>
           <ProductForm submit={this.getInputValue}/>
           {error}
           {spinner}

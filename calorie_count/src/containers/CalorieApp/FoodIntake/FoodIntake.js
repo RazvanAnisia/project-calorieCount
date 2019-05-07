@@ -7,10 +7,10 @@ class FoodIntake extends Component{
   state ={
     products:[],
     total:{
-      totalCalories:null,
-      totalCarbs:null,
-      totalProtein:null,
-      totalFats:null,
+      totalCalories:0,
+      totalCarbs:0,
+      totalProtein:0,
+      totalFats:0,
     },
     showIntakeSummary:false,
     quantityError:null
@@ -22,8 +22,9 @@ class FoodIntake extends Component{
 
   }
   calculateIntake = (inp)=>{
-    this.setState({quantityError:null})
+    this.setState({ quantityError:null })
     const inpNum = Number(inp);
+
     //make a copy of the props that were passed into this component
     const nutriments = {...this.props.nutrients};
 
@@ -35,11 +36,13 @@ class FoodIntake extends Component{
       let carbs = Number(nutriments.carbohydrates_100g);
       let fats = Number(nutriments.fat_100g);
       let protein = Number(nutriments.proteins_100g);
+
       //make calculations
       let caloriesCalc = (energy/(100/inpNum)).toFixed(2);
       let carbsCalc = (carbs/(100/inpNum)).toFixed(2);
       let fatsCalc = (fats/(100/inpNum)).toFixed(2);
       let proteinCalc = (protein/(100/inpNum)).toFixed(2)
+
       //make copy of state
       const products = [...this.state.products];
       const name = this.props.product;
@@ -61,24 +64,34 @@ class FoodIntake extends Component{
 
   updateTotal = ()=>{
     const total = {...this.state.total};
+    console.log(total)
     const products = [...this.state.products];
 
-    let calories = 0;
-    let proteins = 0;
-    let fats = 0;
-    let carbs = 0;
+    var calories = 0;
+    var proteins = 0;
+    var fats = 0;
+    var carbs = 0;
+
     products.forEach((el)=>{
         calories += Number(el.calories);
         proteins += Number(el.proteins);
         carbs += Number(el.carbs);
         fats += Number(el.fats);
     })
-    total.totalCalories = calories.toFixed(2);
-    total.totalProtein = proteins.toFixed(2);
-    total.totalFats = fats.toFixed(2);
-    total.totalCarbs = carbs.toFixed(2);
-    console.log(total)
-    this.setState({total:total});
+
+
+   const newTotal = {
+    totalCalories:calories,
+    totalProtein:proteins,
+    totalFats:fats,
+    totalCarbs: carbs
+   }
+    // total.totalCalories = Number(calories);
+    // total.totalProtein = proteins.toFixed(2);
+    // total.totalFats = fats.toFixed(2);
+    // total.totalCarbs = carbs.toFixed(2);
+    console.log(newTotal)
+    this.setState({total:newTotal});
 
   }
   showSummary =()=>{
@@ -103,6 +116,7 @@ class FoodIntake extends Component{
     if(this.state.products.length >0){
       showInfo = (
      <div>
+         <h4>Total intake</h4>
         <ul className = {classes.info}>
             <li><span>Calories:</span> {this.state.total.totalCalories}Kcal</li>
             <li><span>Carbs:</span> {this.state.total.totalCarbs} g</li>
@@ -127,15 +141,15 @@ class FoodIntake extends Component{
     }
 
        return(
-        <div>
-          <p>Add this to your daily intake:</p>
+        <div className={classes.intakeContainer}>
+          <p className={classes.msg}> Want to add this to you daily intake?</p>
           <form className = {classes.form} onSubmit ={this.getQuantityHandler}>
-            <label>Quantity <span>in g: </span></label>
-            <input type="text" placeholder ="write quantity"></input>
+            <label>Quantity <span>in grams: </span><br/></label>
+            <input type="text" placeholder ="Quantity"></input>
             <input disabled = {this.props.invalid} type="submit" value ="Add"></input>
           </form>
           {error}
-          <h4>Total intake</h4>
+
           {showInfo}
           {potato}
         </div>

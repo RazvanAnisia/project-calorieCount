@@ -13,28 +13,34 @@ h4{
   padding-bottom: 2rem;
 }
 .form{
-  display: block;
-  width:25%;
+   display: block;
+  width:30%;
   margin:1rem auto;
  }
 .form label{
-  margin-bottom: 2rem;
+   margin-bottom: 1rem;
+   display: block;
+   text-align: center;
+
 }
 .form input[type='submit']{
   background-color:tomato;
   border:none;
   border-radius:5px;
-  padding:4px;
+  padding:4px 10px;;
   border:1.5px solid black;
+  margin-left:0.5rem;
 }
 .form input[type='submit']:hover{
   cursor: pointer;
   transform:scale(1.1);
- 
+
 }
 .form input[type='text']{
   border:2px solid black;
   border-radius:5px;
+  padding:4px;
+  margin-left:3rem;
 }
 .info{
   background:linear-gradient(tomato,rgb(40, 168, 207));
@@ -73,6 +79,12 @@ li span{
 .summaryBtn:hover{
   cursor: pointer;
 
+}
+.intakeContainer {
+   height:300px;
+}
+.msg {
+  margin-left:2rem;
 }
 .error{
   background-color:tomato;
