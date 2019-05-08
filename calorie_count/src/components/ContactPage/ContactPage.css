@@ -1,6 +1,6 @@
 .contactPage{
   height:350px;
-  background:linear-gradient(rgb(97, 201, 144),rgb(207, 149, 40));
+  background: linear-gradient(rgb(16, 138, 131),rgb(68, 157, 248));
   padding-top:1rem;
 }
 .cContactPage h1{
@@ -22,7 +22,7 @@
 }
 .links a:hover{
   color:tomato;
-  
+
 }
 @media(max-width:450px){
   .contactPage{

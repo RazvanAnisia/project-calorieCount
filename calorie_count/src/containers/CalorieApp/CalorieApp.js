@@ -10,6 +10,7 @@ import FoodIntake from './FoodIntake/FoodIntake';
 
 
 //  cola 54491472
+//028400070560
 
 class CalorieApp extends Component {
   state = {
@@ -172,7 +173,6 @@ class CalorieApp extends Component {
     }
 
     return(
-      // <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
         <div className={classes.CalorieApp}>
         <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
         <h1>How does it work?</h1>
@@ -205,7 +205,7 @@ class CalorieApp extends Component {
           {this.state.displayed ? allInfo : null}
           {intake}
         </div>
-      // </Animated>
+
     )
   }
 }

@@ -4,8 +4,8 @@
   background:linear-gradient(rgb(6, 46, 58),rgb(10, 56, 70));
   color:white;
   padding-top:2rem;
-  
-  
+
+
 }
 /* .Logo{
   width:50px;
@@ -19,10 +19,14 @@
 }
 .footer ul{
   text-align: center;
+  margin:1rem auto;
+  width:200px;
+  padding-right:35px;
+
 }
 .footer li{
   list-style: none;
-  
+
 }
 .footer a{
   text-decoration: none;
@@ -37,7 +41,10 @@
   display:block;
   margin:0 auto;
 }
-
+.footer .logo{
+  width:100px;
+  margin:0 auto;
+}
 @media(max-width:1000px){
   .footer{
     margin-left:4.1rem;
@@ -70,13 +77,10 @@
     font-size:0.8rem;
   }
 }
-.footer .logo{
-  width:100px;
-  margin:0 47%;
-}
+
 @media(max-width:600px){
   .footer .logo{
-    margin:0 45%;
+    margin:0 auto;
   }
 }
 @media(max-width:400px){

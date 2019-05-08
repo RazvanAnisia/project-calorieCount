@@ -25,7 +25,7 @@
 }
 .submitButton:hover{
   transform:scale(1.02);
-  background:rgb(33, 191, 223);
+
 }
 @media(max-width:450px){
   .BarcodeInput{

@@ -2,7 +2,8 @@
   /* background:linear-gradient(rgb(97, 201, 144),rgb(40, 168, 207)); */
   padding-top:3rem;
   background:linear-gradient(rgb(18, 19, 18),rgb(40, 168, 207));
-  height:auto
+  min-height: 70vh !important;
+
 }
 .CalorieApp h1{
   margin:0;
@@ -47,7 +48,7 @@
   max-height:150px;
 }
 p{
-  font-weight:bold;
+  /* font-weight:bold; */
   text-align: center;
   margin-right:2rem;
 
@@ -60,8 +61,8 @@ p{
   margin:1rem auto 0;
   width:80%;
   height:600px;
-  background:#222222;
-  box-shadow: 4px 4px 4px black;
+  background:#030b18;
+  box-shadow: 6px 4px 11px #000000b5;
   color:white;
   padding:1rem;
 }
@@ -120,7 +121,7 @@ p{
   margin-left:3rem;
 }
 .error{
-  background-color:tomato;
+  background-color:#E93925;
   color:white;
   text-align: center;
   height:3rem;

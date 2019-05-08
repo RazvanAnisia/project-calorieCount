@@ -11,26 +11,26 @@ const header = ()=>{
             <nav>
               <ul className={classes.navElements}>
                 <li>
-                  <NavLink activeStyle={{color:'#a6edba', borderBottom:'2px solid #a6edba', paddingBottom:'0.6rem'}} 
+                  <NavLink activeStyle={{color:'#a6edba', borderBottom:'2px solid #a6edba', paddingBottom:'0.6rem'}}
                   exact to='/'>Home</NavLink>
                 </li>
                 <li>
-                  <NavLink activeStyle={{color:'#a6edba', borderBottom:'2px solid #a6edba', paddingBottom:'0.6rem'}} 
+                  <NavLink activeStyle={{color:'#a6edba', borderBottom:'2px solid #a6edba', paddingBottom:'0.6rem'}}
                   exact to='/calorie-count' >The App</NavLink>
                 </li>
                 <li>
-                  <NavLink  activeStyle={{color:'#a6edba', borderBottom:'2px solid #a6edba', paddingBottom:'0.6rem'}} 
+                  <NavLink  activeStyle={{color:'#a6edba', borderBottom:'2px solid #a6edba', paddingBottom:'0.6rem'}}
                   to='/login' exact>Login</NavLink>
                 </li>
                 <li>
-                  <NavLink  activeStyle={{color:'#a6edba',borderBottom:'2px solid #a6edba', paddingBottom:'0.6rem'}} 
+                  <NavLink  activeStyle={{color:'#a6edba',borderBottom:'2px solid #a6edba', paddingBottom:'0.6rem'}}
                   to='/contact' exact>Contact</NavLink>
                 </li>
               </ul>
             </nav>
-            
+
       </header>
-     
+
     </div>
   )
 }

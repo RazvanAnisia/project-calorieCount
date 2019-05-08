@@ -6,7 +6,10 @@
   display:block;
   margin:1rem auto ;
   padding-top:1rem;
-  
+
+}
+.summaryContainer {
+  min-height:300px;
 }
 .summary li{
   list-style:none;
@@ -16,13 +19,15 @@
 .name{
   font-family: 'Lobster',cursive;
   color:white;
-  
+
 }
 li span{
   font-family:'Lato', serif;
   font-weight:700;
 }
-
+.infoLink {
+  color:#E93925;
+}
 .summary li{
   display:flex;
   justify-content: space-around;
@@ -43,7 +48,7 @@ li span{
 p a{
   color:white;
   text-decoration: none;
-  
+
 }
 @media (max-width:720px){
   .summary{
@@ -64,5 +69,5 @@ p a{
     font-size:0.8rem;
     margin:1rem 1rem;
   }
-  
+
 }

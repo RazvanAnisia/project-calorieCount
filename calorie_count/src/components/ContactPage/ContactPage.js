@@ -1,14 +1,13 @@
 import React from 'react';
-import classes from './ContactPage.css';
+import classes from './contactPage.css';
 import {Animated} from "react-animated-css";
 
 const contactPage = ()=>{
       return(
-      <Animated animationIn ="bounceInLeft" animationOut ="fadeOut" isVisible ={true}>
         <div className ={classes.contactPage}>
           <div className ={classes.wrap}>
             <h1>Contact</h1>
-            <p>This app was created by Razvan Anisia, using React.js, Node.js and PostgreSQL and the Open Food Facts API.</p>
+            <p>This app was created using React.js and the Open Food Facts API.</p>
             <p>If you wish to contact the creator ,you can find him using these links</p>
             <ul className ={classes.links}>
                 <li>
@@ -27,7 +26,6 @@ const contactPage = ()=>{
             </ul>
           </div>
         </div>
-      </Animated>
       )
   }
 
