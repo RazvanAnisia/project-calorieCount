@@ -4,7 +4,7 @@ import {Animated} from "react-animated-css";
 
 const hero = ()=>{
   return(
-    <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+
       <div className = {classes.hero}>
         <h1 className={classes.heroTitle}>Welcome to the Calorie Count app!</h1>
           <p>Are you finding <span className={classes.highlight}>weight loss</span> a challenge? <br/>
@@ -21,7 +21,7 @@ const hero = ()=>{
             keep track of your day to day meals, and their quality.
         </p>
       </div>
-    </Animated>
+
   )
 }
 

@@ -1,6 +1,6 @@
 import React,{Component}  from 'react';
 import classes from './FoodIntake.css';
-import IntakeSummary from '../../../components/IntakeSummary/IntakeSummary';
+import IntakeSummary from '../IntakeSummary/IntakeSummary';
 import potatoImg from '../../../assets/potato_surprised.jpeg';
 //54491472
 class FoodIntake extends Component{

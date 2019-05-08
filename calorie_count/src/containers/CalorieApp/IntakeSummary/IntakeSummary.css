@@ -10,6 +10,7 @@
 }
 .summaryContainer {
   min-height:300px;
+  padding-bottom:20px;
 }
 .summary li{
   list-style:none;
