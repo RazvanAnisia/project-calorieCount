@@ -7,19 +7,20 @@ class LoginPage extends Component{
    render(){
     return(
         <div className ={classes.loginPage}>
-          <div className ={classes.wrap}>
-            <h1>Login</h1>
-            <h5>New User?Please Register
-              <NavLink to ="/register">here</NavLink>
-            </h5>
-            <form>
-              <label htmlFor ='email'>Email</label>
-              <input id ='email' type='text'/>
-              <label htmlFor ='password'>Password</label>
-              <input id ='password' type='text'/>
-              <input type ='submit'/>
-            </form>
-          </div>
+         <p>Login functionality coming soon! </p>
+//           <div className ={classes.wrap}>
+//             <h1>Login</h1>
+//             <h5>New User?Please Register
+//               <NavLink to ="/register">here</NavLink>
+//             </h5>
+//             <form>
+//               <label htmlFor ='email'>Email</label>
+//               <input id ='email' type='text'/>
+//               <label htmlFor ='password'>Password</label>
+//               <input id ='password' type='text'/>
+//               <input type ='submit'/>
+//             </form>
+//           </div>
         </div>
     )
   }
